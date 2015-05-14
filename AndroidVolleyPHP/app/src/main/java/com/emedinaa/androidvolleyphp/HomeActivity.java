@@ -11,16 +11,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.emedinaa.androidvolleyphp.view.fragments.PostFragment;
+import com.emedinaa.androidvolleyphp.view.listeners.OnHomeListener;
 
-public class HomeActivity extends ActionBarActivity {
+/**
+ * Eduardo José Medina Alfaro
+ * email: emedinaa@gmail.com
+ * twitter : @eduardomedina
+ * https://github.com/emedinaa/
+ */
+public class HomeActivity extends ActionBarActivity implements OnHomeListener {
 
+    private PostFragment postFragment= PostFragment.newInstance(null,null);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, postFragment)
                     .commit();
         }
     }
