@@ -164,7 +164,7 @@ public class PostFragment extends Fragment {
                 try {
                     responseEntity= gson.fromJson(response,ResponseEntity.class);
 
-                    tviResult.setText("success  "+response+"/n"+responseEntity.getData().get(0));
+                    tviResult.setText("success  "+response+"\n"+responseEntity.getData().get(0));
 
                 }catch (Exception e)
                 {
